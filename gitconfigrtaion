@@ -1,0 +1,46 @@
+[ubuntu ~]$ sudo apt-get install git-core
+[sudo] password for ubuntu:
+
+[ubuntu ~]$ git --version
+git version 1.8.1.2
+
+[jerry@CentOS project]$ git config --global user.name "Jerry Mouse"
+[jerry@CentOS project]$ git config --global user.email "jerry@tutorialspoint.com"
+
+[jerry@CentOS project]$ git config --global color.ui true
+
+[jerry@CentOS project]$ git config --global color.status auto
+
+[jerry@CentOS project]$ git config --global color.branch auto
+[jerry@CentOS project]$ git config --global core.editor vim
+
+[jerry@CentOS ~]$ git config --list
+
+--------------------------------------------------
+# add new group
+[root@CentOS ~]# groupadd dev
+
+# add new user
+[root@CentOS ~]# useradd -G devs -d /home/gituser -m -s /bin/bash gituser
+
+# change password
+[root@CentOS ~]# passwd gituser
+
+--------------------------------------------------
+Create a Bare Repository
+Let us initialize a new repository by using init command followed by --bare option. It initializes the repository without a working directory. By convention, the bare repository must be named as .git.
+
+[gituser@CentOS ~]$ pwd
+/home/gituser
+
+[gituser@CentOS ~]$ mkdir project.git
+
+[gituser@CentOS ~]$ cd project.git/
+
+[gituser@CentOS project.git]$ ls
+-------------------------------------------------
+[gituser@CentOS project.git]$ git --bare init
+Initialized empty Git repository in /home/gituser-m/project.git/
+
+[gituser@CentOS project.git]$ ls
+branches config description HEAD hooks info objects refs
